@@ -1,0 +1,120 @@
+.kitchen-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: var(--bg-sidebar);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .kitchen-header .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .kitchen-header .logo-area .icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+        .kitchen-header h1 {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+        }
+        .kitchen-header h1 small {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+        .kitchen-stats {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .kitchen-stat {
+            text-align: center;
+        }
+        .kitchen-stat .value {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .kitchen-stat .label {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+        .kitchen-body {
+            padding: 2rem;
+        }
+        .queue-section h2 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .queue-section {
+            margin-bottom: 2.5rem;
+        }
+        .order-card .item-list {
+            margin: 0.8rem 0;
+        }
+        .order-card .item-row {
+            display: flex;
+            align-items: center;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        .order-card .item-row:last-child {
+            border-bottom: none;
+        }
+        .order-card .item-qty {
+            background: var(--primary-soft);
+            color: var(--primary);
+            font-weight: 700;
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            margin-right: 0.75rem;
+            font-size: 0.85rem;
+            min-width: 28px;
+            text-align: center;
+        }
+        .order-card .item-name {
+            flex: 1;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        .order-card .item-note {
+            font-size: 0.78rem;
+            color: var(--warning);
+            font-style: italic;
+        }
+        .time-elapsed {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .time-elapsed.ok { color: var(--success); }
+        .time-elapsed.warn { color: var(--warning); }
+        .time-elapsed.critical { color: var(--danger); }
+
+        /* Kitchen uses full width, no sidebar */
+        .kitchen-body .order-queue {
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
