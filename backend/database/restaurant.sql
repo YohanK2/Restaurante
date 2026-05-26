@@ -100,11 +100,7 @@ CREATE TABLE IF NOT EXISTS status_logs (
 -- Passwords: admin123, server123, cook123
 -- ============================================
 INSERT INTO users (username, password_hash, name, role) VALUES
-('admin', '$2y$10$YourHashHere_admin123_placeholder', 'Administrador', 'admin'),
-('server1', '$2y$10$YourHashHere_server123_placeholder', 'Carlos Mesero', 'server'),
-('server2', '$2y$10$YourHashHere_server123_placeholder', 'María Mesera', 'server'),
-('cook1', '$2y$10$YourHashHere_cook123_placeholder', 'José Cocinero', 'cook'),
-('cook2', '$2y$10$YourHashHere_cook123_placeholder', 'Ana Cocinera', 'cook');
+('admin', '$2y$10$.vYQAFZscRhHTIfzW9PzDuh5ZFUp7gNWyxxqjcWlLAGBG1an.p2lC', 'Administrador', 'admin'),
 
 -- ============================================
 -- SEED DATA: Sample Menu Items
