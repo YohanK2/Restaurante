@@ -59,14 +59,14 @@ function getCurrentUser() {
  */
 function requireRole($requiredRole) {
     if (!isLoggedIn()) {
-        header('Location: /proyecto/index.php');
+        header('Location: /index.php');
         exit;
     }
     if (is_array($requiredRole)) {
         if (!in_array($_SESSION['role'], $requiredRole)) {
             header('HTTP/1.1 403 Forbidden');
             echo '<h1>Acceso Denegado</h1><p>No tienes permisos para acceder a esta sección.</p>';
-            echo '<a href="/proyecto/index.php">Volver al inicio</a>';
+            echo '<a href="index.php">Volver al inicio</a>';
             exit;
         }
     } else {
@@ -84,10 +84,10 @@ function requireRole($requiredRole) {
  */
 function getRoleDashboard($role) {
     switch ($role) {
-        case 'admin':  return '/proyecto/public/admin/admin.php';
-        case 'server': return '/proyecto/public/server/server.php';
-        case 'cook':   return '/proyecto/public/kitchen/kitchen.php';
-        default:       return '/proyecto/public/index.php';
+        case 'admin':  return '/public/admin/admin.php';
+        case 'server': return '/public/server/server.php';
+        case 'cook':   return '/public/kitchen/kitchen.php';
+        default:       return '/index.php';
     }
 }
 

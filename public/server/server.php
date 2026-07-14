@@ -35,7 +35,7 @@ $user = getCurrentUser();
                 <span class="icon">📜</span> Historial
             </a>
             <div class="nav-divider"></div>
-            <a class="nav-item" href="/proyecto/index.php?logout=1">
+            <a class="nav-item" href="/index.php?logout=1">
                 <span class="icon">🚪</span> Cerrar Sesión
             </a>
         </nav>

@@ -213,13 +213,13 @@ try {
                 <p>Cocinero: <code>cook1</code> / <code>cook123</code></p>
             </div>
             <div class="actions">
-                <a href="/proyecto/index.php" class="btn btn-primary">Ir al Login →</a>
-                <a href="/proyecto/database/schema.php" class="btn btn-ghost">Ejecutar de nuevo</a>
+                <a href="/index.php" class="btn btn-primary">Ir al Login →</a>
+                <a href="/database/schema.php" class="btn btn-ghost">Ejecutar de nuevo</a>
             </div>
         <?php else: ?>
             <div class="actions">
                 <p style="color:#f43f5e; margin-bottom:1rem;">Verifica que MySQL esté corriendo en XAMPP</p>
-                <a href="/proyecto/database/schema.php" class="btn btn-ghost">Reintentar</a>
+                <a href="/database/schema.php" class="btn btn-ghost">Reintentar</a>
             </div>
         <?php endif; ?>
     </div>

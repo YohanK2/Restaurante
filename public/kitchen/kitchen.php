@@ -35,7 +35,7 @@ $user = getCurrentUser();
             </div>
             <div style="display:flex;gap:0.5rem;align-items:center">
                 <button class="btn btn-ghost btn-sm" onclick="loadQueue()">🔄 Actualizar</button>
-                <a href="/proyecto/index.php?logout=1" class="btn btn-ghost btn-sm">🚪 Salir</a>
+                <a href="/index.php?logout=1" class="btn btn-ghost btn-sm">🚪 Salir</a>
             </div>
         </div>
     </header>
