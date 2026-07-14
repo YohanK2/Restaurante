@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
 // Handle logout
 if (isset($_GET['logout'])) {
     logout();
-    header('Location: /proyecto/index.php');
+    header('Location: /index.php');
     exit;
 }
 
@@ -40,8 +40,8 @@ if (isLoggedIn()) {
     <title>Restaurant Manager - Iniciar Sesión</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/proyecto/public/assets/css/style.css">
-    <link rel="stylesheet" href="/proyecto/public/assets/css/principal.css">
+    <link rel="stylesheet" href="/public/assets/css/style.css">
+    <link rel="stylesheet" href="/public/assets/css/principal.css">
 </head>
 <body class="login-page">
     <div class="login-container">

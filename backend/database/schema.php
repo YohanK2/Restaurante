@@ -1,7 +1,7 @@
 <?php
 /**
  * Database Schema Initialization
- * Visit: http://localhost/proyecto/database/schema.php
+ * Visit: http://localhost/database/schema.php
  * This will CREATE the database, tables, and seed data automatically.
  */
 
