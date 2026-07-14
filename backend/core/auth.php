@@ -11,13 +11,11 @@ require_once __DIR__ . '/../config/database.php';
  * Works regardless of whether accessed via localhost, IP, or domain.
  */
 function getBaseUrl() {
-    $scriptName = dirname($_SERVER['SCRIPT_NAME']);
-
-    if ($scriptName === '/' || $scriptName === '\\') {
-        return '';
+    if (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) {
+        return '/restaurante';
     }
 
-    return rtrim($scriptName, '/');
+    return '';
 }
 
 /**
