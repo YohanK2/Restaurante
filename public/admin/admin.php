@@ -11,6 +11,7 @@ $user = getCurrentUser();
     <title>Admin Dashboard - Restaurant Manager</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <script>const BASE_URL = '<?= getBaseUrl() ?>';</script>
 </head>
 <body>
 <header class="app-header">
@@ -30,7 +31,7 @@ $user = getCurrentUser();
         <div class="profile-menu" id="profileMenu">
             <a href="#" onclick="event.preventDefault()">Mi perfil</a>
             <a href="#" onclick="event.preventDefault()">Configuración</a>
-            <a href="/index.php?logout=1">Cerrar sesión</a>
+            <a href="<?= getBaseUrl() ?>/index.php?logout=1">Cerrar sesión</a>
         </div>
     </div>
 </header>
@@ -62,7 +63,7 @@ $user = getCurrentUser();
                 <span class="icon">👥</span> Usuarios
             </a>
             <div class="nav-divider"></div>
-            <a class="nav-item" href="/index.php?logout=1">
+            <a class="nav-item" href="<?= getBaseUrl() ?>/index.php?logout=1">
                 <span class="icon">🚪</span> Cerrar Sesión
             </a>
         </nav>

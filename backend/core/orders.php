@@ -254,7 +254,7 @@ function saveMenuImage($base64Data) {
     $filePath = $uploadDir . '/' . $filename;
     file_put_contents($filePath, $decoded);
 
-    return '/public/assets/uploads/menu/' . $filename;
+    return getBaseUrl() . '/public/assets/uploads/menu/' . $filename;
 }
 
 /**

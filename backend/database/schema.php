@@ -1,14 +1,14 @@
 <?php
 /**
  * Database Schema Initialization
- * Visit: http://localhost/database/schema.php
+ * Visit: http://localhost/restaurante/backend/database/schema.php
  * This will CREATE the database, tables, and seed data automatically.
  */
 
 // ============================================
 // CONFIGURATION
 // ============================================
-$DB_HOST    = 'localhost';
+$DB_HOST    = '127.0.0.1';
 $DB_PORT    = 3306;
 $DB_NAME    = 'restaurant_db';
 $DB_USER    = 'root';
@@ -213,13 +213,13 @@ try {
                 <p>Cocinero: <code>cook1</code> / <code>cook123</code></p>
             </div>
             <div class="actions">
-                <a href="/index.php" class="btn btn-primary">Ir al Login →</a>
-                <a href="/database/schema.php" class="btn btn-ghost">Ejecutar de nuevo</a>
+                <a href="/restaurante/index.php" class="btn btn-primary">Ir al Login →</a>
+                <a href="/restaurante/backend/database/schema.php" class="btn btn-ghost">Ejecutar de nuevo</a>
             </div>
         <?php else: ?>
             <div class="actions">
                 <p style="color:#f43f5e; margin-bottom:1rem;">Verifica que MySQL esté corriendo en XAMPP</p>
-                <a href="/database/schema.php" class="btn btn-ghost">Reintentar</a>
+                <a href="/restaurante/backend/database/schema.php" class="btn btn-ghost">Reintentar</a>
             </div>
         <?php endif; ?>
     </div>

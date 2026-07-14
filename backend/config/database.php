@@ -4,7 +4,7 @@
  * MySQL connection via PDO for phpMyAdmin/XAMPP/WAMP
  */
 
-define('DB_HOST', 'localhost');
+define('DB_HOST', '127.0.0.1');
 define('DB_PORT', 3306);
 define('DB_NAME', 'restaurant_db');
 define('DB_USER', 'root');

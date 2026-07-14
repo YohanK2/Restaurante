@@ -11,6 +11,7 @@ $user = getCurrentUser();
     <title>Mesero - Restaurant Manager</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <script>const BASE_URL = '<?= getBaseUrl() ?>';</script>
 </head>
 <body>
 <div class="app-layout">
@@ -35,7 +36,7 @@ $user = getCurrentUser();
                 <span class="icon">📜</span> Historial
             </a>
             <div class="nav-divider"></div>
-            <a class="nav-item" href="/index.php?logout=1">
+            <a class="nav-item" href="<?= getBaseUrl() ?>/index.php?logout=1">
                 <span class="icon">🚪</span> Cerrar Sesión
             </a>
         </nav>

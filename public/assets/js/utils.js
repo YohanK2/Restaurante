@@ -2,7 +2,7 @@
  * Shared JavaScript Utilities
  */
 
-const API_URL = '/backend/core/router.php';
+const API_URL = (typeof BASE_URL !== 'undefined' ? BASE_URL : '') + '/backend/core/router.php';
 
 /**
  * Make API request

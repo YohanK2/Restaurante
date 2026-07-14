@@ -12,6 +12,7 @@ $user = getCurrentUser();
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/cocina.css">
+    <script>const BASE_URL = '<?= getBaseUrl() ?>';</script>
 </head>
 <body>
 
@@ -35,7 +36,7 @@ $user = getCurrentUser();
             </div>
             <div style="display:flex;gap:0.5rem;align-items:center">
                 <button class="btn btn-ghost btn-sm" onclick="loadQueue()">🔄 Actualizar</button>
-                <a href="/index.php?logout=1" class="btn btn-ghost btn-sm">🚪 Salir</a>
+                <a href="<?= getBaseUrl() ?>/index.php?logout=1" class="btn btn-ghost btn-sm">🚪 Salir</a>
             </div>
         </div>
     </header>

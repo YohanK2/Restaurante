@@ -7,6 +7,18 @@ session_start();
 require_once __DIR__ . '/../config/database.php';
 
 /**
+ * Detect the project base URL dynamically from the filesystem path.
+ * Works regardless of whether accessed via localhost, IP, or domain.
+ */
+function getBaseUrl() {
+    $scriptFilename = str_replace('\\', '/', $_SERVER['SCRIPT_FILENAME']);
+    $docRoot = str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']);
+    $relativePath = str_replace($docRoot, '', $scriptFilename);
+    $parts = explode('/', trim($relativePath, '/'));
+    return '/' . $parts[0];
+}
+
+/**
  * Attempt login with username and password
  */
 function login($username, $password) {
@@ -59,21 +71,22 @@ function getCurrentUser() {
  */
 function requireRole($requiredRole) {
     if (!isLoggedIn()) {
-        header('Location: /index.php');
+        header('Location: ' . getBaseUrl() . '/index.php');
         exit;
     }
+    $loginUrl = getBaseUrl() . '/index.php';
     if (is_array($requiredRole)) {
         if (!in_array($_SESSION['role'], $requiredRole)) {
             header('HTTP/1.1 403 Forbidden');
             echo '<h1>Acceso Denegado</h1><p>No tienes permisos para acceder a esta sección.</p>';
-            echo '<a href="index.php">Volver al inicio</a>';
+            echo '<a href="' . $loginUrl . '">Volver al inicio</a>';
             exit;
         }
     } else {
         if ($_SESSION['role'] !== $requiredRole) {
             header('HTTP/1.1 403 Forbidden');
             echo '<h1>Acceso Denegado</h1><p>No tienes permisos para acceder a esta sección.</p>';
-            echo '<a href="/index.php">Volver al inicio</a>';
+            echo '<a href="' . $loginUrl . '">Volver al inicio</a>';
             exit;
         }
     }
@@ -83,11 +96,12 @@ function requireRole($requiredRole) {
  * Get redirect URL based on user role
  */
 function getRoleDashboard($role) {
+    $base = getBaseUrl();
     switch ($role) {
-        case 'admin':  return '/public/admin/admin.php';
-        case 'server': return '/public/server/server.php';
-        case 'cook':   return '/public/kitchen/kitchen.php';
-        default:       return '/index.php';
+        case 'admin':  return $base . '/public/admin/admin.php';
+        case 'server': return $base . '/public/server/server.php';
+        case 'cook':   return $base . '/public/kitchen/kitchen.php';
+        default:       return $base . '/index.php';
     }
 }
 
